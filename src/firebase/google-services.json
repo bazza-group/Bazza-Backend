@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "358855325316",
+    "project_id": "baza-application-4e83f",
+    "storage_bucket": "baza-application-4e83f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358855325316:android:661441977ca29b2521b4d1",
+        "android_client_info": {
+          "package_name": "com.bazaapplication.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358855325316-o1nlarpos3666or3tqq7folja9vea3ot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bazaapplication.android",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "358855325316-labl2pan8a9qaoq2rbjajfr42d8u0t7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwvHptlc8XMgCVOjOTvLr9Pkn6UquoTog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358855325316-labl2pan8a9qaoq2rbjajfr42d8u0t7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
