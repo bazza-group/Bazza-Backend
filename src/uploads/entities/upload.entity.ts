@@ -28,7 +28,7 @@ export class Upload {
   @Column()
   userId: string;
 
-  @Column({ type: 'enum', enum: TipoUpload })
+  @Column({ type: 'enum', enum: TipoUpload, enumName: 'tipo_upload_enum' })
   tipo: TipoUpload;
 
   @Column()
@@ -37,7 +37,7 @@ export class Upload {
   @Column()
   mimeType: string;
 
-  @Column({ type: 'longblob' })
+  @Column({ type: 'bytea' })
   ficheiro: Buffer;
 
   @Column()

@@ -69,10 +69,10 @@ import { GlobalExceptionFilter } from './common/filters/global-exception.filter'
 
     // Banco de dados
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT || '3306', 10),
-      username: process.env.DB_USER || 'root',
+      port: parseInt(process.env.DB_PORT || '5432', 10),
+      username: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASS || '',
       database: process.env.DB_NAME || 'baza_db',
       entities: [
@@ -98,7 +98,6 @@ import { GlobalExceptionFilter } from './common/filters/global-exception.filter'
       ],
       synchronize: process.env.NODE_ENV !== 'production',
       logging: false,
-      charset: 'utf8mb4',
     }),
 
     // Módulos da aplicação

@@ -28,6 +28,7 @@ export class Documento {
       'carta_conducao_verso',
       'foto_veiculo',
     ],
+    enumName: 'documento_tipo_enum',
   })
   tipo: string;
 
@@ -37,6 +38,7 @@ export class Documento {
   @Column({
     type: 'enum',
     enum: ['pendente', 'aprovado', 'rejeitado'],
+    enumName: 'documento_status_enum',
     default: 'pendente',
   })
   status: string;

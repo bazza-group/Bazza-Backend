@@ -27,16 +27,16 @@ export class Plano {
   @JoinColumn({ name: 'userId' })
   user: any;
 
-  @Column({ type: 'enum', enum: TipoPlano })
+  @Column({ type: 'enum', enum: TipoPlano, enumName: 'tipo_plano_enum' })
   tipo: TipoPlano;
 
-  @Column({ type: 'enum', enum: StatusPlano, default: StatusPlano.PENDENTE })
+  @Column({ type: 'enum', enum: StatusPlano, enumName: 'status_plano_enum', default: StatusPlano.PENDENTE })
   status: StatusPlano;
 
   @Column('decimal', { precision: 10, scale: 2 })
   valor: number;
 
-  @Column({ type: 'longblob', nullable: true })
+  @Column({ type: 'bytea', nullable: true })
   comprovativo: Buffer;
 
   @Column({ nullable: true })

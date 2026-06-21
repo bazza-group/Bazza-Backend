@@ -24,7 +24,7 @@ export class Transacao {
   @JoinColumn({ name: 'carteiraId' })
   carteira: any;
 
-  @Column({ type: 'enum', enum: TipoTransacao })
+  @Column({ type: 'enum', enum: TipoTransacao, enumName: 'tipo_transacao_enum' })
   tipo: TipoTransacao;
 
   @Column('decimal', { precision: 15, scale: 2 })

@@ -45,7 +45,7 @@ export class Pedido {
 
   // Preço e pagamento
   @Column('decimal', { precision: 10, scale: 2 })        valorEntrega: number;
-  @Column({ type: 'enum', enum: TipoPagamento, default: TipoPagamento.NUMERARIO }) tipoPagamento: TipoPagamento;
+  @Column({ type: 'enum', enum: TipoPagamento, enumName: 'tipo_pagamento_enum', default: TipoPagamento.NUMERARIO }) tipoPagamento: TipoPagamento;
 
   // QR / Código de confirmação
   @Column({ nullable: true })  codigoQr: string;
@@ -54,7 +54,7 @@ export class Pedido {
   @Column({ nullable: true, type: 'timestamp' }) codigoConfirmadoEm: Date;
 
   // Status
-  @Column({ type: 'enum', enum: StatusPedido, default: StatusPedido.A_PROCURAR_MOTOQUEIRO })
+  @Column({ type: 'enum', enum: StatusPedido, enumName: 'status_pedido_enum', default: StatusPedido.A_PROCURAR_MOTOQUEIRO })
   status: StatusPedido;
 
   // Timestamps de transição

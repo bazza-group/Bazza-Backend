@@ -53,6 +53,7 @@ export class Deliver {
   @Column({
     type: 'enum',
     enum: DeliverDisponibilidade,
+    enumName: 'deliver_disponibilidade_enum',
     default: DeliverDisponibilidade.OFFLINE,
   })
   statusDisponibilidade: DeliverDisponibilidade;
@@ -60,6 +61,7 @@ export class Deliver {
   @Column({
     type: 'enum',
     enum: DeliverStatus,
+    enumName: 'deliver_status_enum',
     default: DeliverStatus.PENDENTE,
   })
   status: DeliverStatus;

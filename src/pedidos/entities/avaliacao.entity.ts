@@ -33,7 +33,7 @@ export class Avaliacao {
   @JoinColumn({ name: 'avaliadoId' })
   avaliado: any;
 
-  @Column('tinyint')
+  @Column({ type: 'smallint' })
   rating: number; // 1-5
 
   @Column({ nullable: true, type: 'text' })

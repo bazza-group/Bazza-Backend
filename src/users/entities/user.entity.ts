@@ -28,10 +28,10 @@ export class User {
   @Column({ nullable: true, type: 'date' }) dataNascimento: Date;
   @Column({ nullable: true }) numeroDocumento: string;
   @Column({ default: 'BI', nullable: true }) tipoDocumento: string;
-  @Column({ nullable: true, type: 'longblob' }) fotoPerfil: Buffer;
+  @Column({ nullable: true, type: 'bytea' }) fotoPerfil: Buffer;
   @Column({ nullable: true }) fotoPerfilUrl: string; // URL externa (Google)
-  @Column({ type: 'enum', enum: UserRole, default: UserRole.CLIENT }) role: UserRole;
-  @Column({ type: 'enum', enum: UserStatus, default: UserStatus.ACTIVE }) status: UserStatus;
+  @Column({ type: 'enum', enum: UserRole, enumName: 'user_role_enum', default: UserRole.CLIENT }) role: UserRole;
+  @Column({ type: 'enum', enum: UserStatus, enumName: 'user_status_enum', default: UserStatus.ACTIVE }) status: UserStatus;
   @Column({ nullable: true }) fcmToken: string;
   @Column({ nullable: true }) planoAtivo: string;
   @Column({ nullable: true, type: 'timestamp' }) planoExpiraEm: Date;

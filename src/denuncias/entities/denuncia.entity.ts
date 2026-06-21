@@ -33,7 +33,7 @@ export class Denuncia {
   @Column()
   denunciadoId: string;
 
-  @Column({ type: 'enum', enum: TipoDenuncia })
+  @Column({ type: 'enum', enum: TipoDenuncia, enumName: 'tipo_denuncia_enum' })
   tipo: TipoDenuncia;
 
   @Column({ type: 'text', nullable: true })
@@ -45,6 +45,7 @@ export class Denuncia {
   @Column({
     type: 'enum',
     enum: StatusDenuncia,
+    enumName: 'status_denuncia_enum',
     default: StatusDenuncia.PENDENTE,
   })
   status: StatusDenuncia;

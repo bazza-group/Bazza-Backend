@@ -1,0 +1,88 @@
+72c72
+<       type: 'mysql',
+---
+>       type: 'postgres',
+74,75c74,75
+<       port: parseInt(process.env.DB_PORT || '3306', 10),
+<       username: process.env.DB_USER || 'root',
+---
+>       port: parseInt(process.env.DB_PORT || '5432', 10),
+>       username: process.env.DB_USER || 'postgres',
+101d100
+<       charset: 'utf8mb4',
+31c31
+<   @Column({ nullable: true, type: 'longblob' }) fotoPerfil: Buffer;
+---
+>   @Column({ nullable: true, type: 'bytea' }) fotoPerfil: Buffer;
+33,34c33,34
+<   @Column({ type: 'enum', enum: UserRole, default: UserRole.CLIENT }) role: UserRole;
+<   @Column({ type: 'enum', enum: UserStatus, default: UserStatus.ACTIVE }) status: UserStatus;
+---
+>   @Column({ type: 'enum', enum: UserRole, enumName: 'user_role_enum', default: UserRole.CLIENT }) role: UserRole;
+>   @Column({ type: 'enum', enum: UserStatus, enumName: 'user_status_enum', default: UserStatus.ACTIVE }) status: UserStatus;
+36c36
+<   @Column('tinyint')
+---
+>   @Column({ type: 'smallint' })
+36c36
+<   @Column('tinyint')
+---
+>   @Column({ type: 'smallint' })
+31c31
+<   @Column({ type: 'json', nullable: true })
+---
+>   @Column({ type: 'jsonb', nullable: true })
+48c48
+<   @Column({ type: 'enum', enum: TipoPagamento, default: TipoPagamento.NUMERARIO }) tipoPagamento: TipoPagamento;
+---
+>   @Column({ type: 'enum', enum: TipoPagamento, enumName: 'tipo_pagamento_enum', default: TipoPagamento.NUMERARIO }) tipoPagamento: TipoPagamento;
+57c57
+<   @Column({ type: 'enum', enum: StatusPedido, default: StatusPedido.A_PROCURAR_MOTOQUEIRO })
+---
+>   @Column({ type: 'enum', enum: StatusPedido, enumName: 'status_pedido_enum', default: StatusPedido.A_PROCURAR_MOTOQUEIRO })
+8c8
+<   @Column({ type: 'enum', enum: ['cliente', 'motoqueiro'] }) remetenteTipo: 'cliente' | 'motoqueiro';
+---
+>   @Column({ type: 'enum', enum: ['cliente', 'motoqueiro'], enumName: 'remetente_tipo_enum' }) remetenteTipo: 'cliente' | 'motoqueiro';
+31c31
+<   @Column({ type: 'enum', enum: TipoUpload })
+---
+>   @Column({ type: 'enum', enum: TipoUpload, enumName: 'tipo_upload_enum' })
+40c40
+<   @Column({ type: 'longblob' })
+---
+>   @Column({ type: 'bytea' })
+30c30
+<   @Column({ type: 'enum', enum: TipoPlano })
+---
+>   @Column({ type: 'enum', enum: TipoPlano, enumName: 'tipo_plano_enum' })
+33c33
+<   @Column({ type: 'enum', enum: StatusPlano, default: StatusPlano.PENDENTE })
+---
+>   @Column({ type: 'enum', enum: StatusPlano, enumName: 'status_plano_enum', default: StatusPlano.PENDENTE })
+39c39
+<   @Column({ type: 'longblob', nullable: true })
+---
+>   @Column({ type: 'bytea', nullable: true })
+30a31
+>     enumName: 'documento_tipo_enum',
+39a41
+>     enumName: 'documento_status_enum',
+55a56
+>     enumName: 'deliver_disponibilidade_enum',
+62a64
+>     enumName: 'deliver_status_enum',
+36c36
+<   @Column({ type: 'enum', enum: TipoDenuncia })
+---
+>   @Column({ type: 'enum', enum: TipoDenuncia, enumName: 'tipo_denuncia_enum' })
+47a48
+>     enumName: 'status_denuncia_enum',
+29a30
+>     enumName: 'mensagem_suporte_remetente_enum',
+27a28
+>     enumName: 'suporte_status_enum',
+27c27
+<   @Column({ type: 'enum', enum: TipoTransacao })
+---
+>   @Column({ type: 'enum', enum: TipoTransacao, enumName: 'tipo_transacao_enum' })

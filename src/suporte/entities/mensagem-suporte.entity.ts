@@ -27,6 +27,7 @@ export class MensagemSuporte {
   @Column({
     type: 'enum',
     enum: ['cliente', 'admin'],
+    enumName: 'mensagem_suporte_remetente_enum',
   })
   remetenteTipo: string;
 

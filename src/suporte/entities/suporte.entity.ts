@@ -25,6 +25,7 @@ export class Suporte {
   @Column({
     type: 'enum',
     enum: ['aberto', 'em_analise', 'resolvido', 'fechado', 'eliminado'],
+    enumName: 'suporte_status_enum',
     default: 'aberto',
   })
   status: string;

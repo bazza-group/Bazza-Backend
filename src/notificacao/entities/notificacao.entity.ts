@@ -28,7 +28,7 @@ export class Notificacao {
   @Column({ type: 'text' })
   mensagem: string;
 
-  @Column({ type: 'json', nullable: true })
+  @Column({ type: 'jsonb', nullable: true })
   dados: Record<string, any>;
 
   @Column({ default: false })
