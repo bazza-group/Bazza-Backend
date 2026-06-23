@@ -14,8 +14,10 @@ export const databaseConfig = (): TypeOrmModuleOptions => ({
   migrations: [path.join(__dirname, '../migrations/*.ts')],
   migrationsRun: process.env.DB_MIGRATIONS_RUN === 'true',
   timezone: process.env.TIMEZONE || '+00:00',
-  // Disable foreign key checks during schema sync to avoid constraint conflicts
+  
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
   extra: {
     connectionLimit: 10,
   },
 });
+
