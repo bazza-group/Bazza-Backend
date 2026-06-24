@@ -73,8 +73,7 @@ export class CarteiraService {
     valor: number,
     pedidoId: string,
   ) {
-    const taxaPlataforma = valor * 0.15;
-    const valorMotoqueiro = valor - taxaPlataforma;
+    const valorMotoqueiro = valor;
 
     // Debitar cliente
     await this.adicionarTransacao(
